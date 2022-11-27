@@ -4,14 +4,7 @@ pipeline {
     DOCKERHUB_CREDENTIALS = credentials('dockerhub')
     }
     stages { 
-        stage('SCM Checkout') {
-            steps{
-            //git 'https://github.com/ravdy/nodejs-demo.git'
-           // git 'https://github.com/anilgudivada/docker.git'
-            git branch: 'main', url: 'https://github.com/anilgudivada/docker.git'
-            }
-        }
-
+        
         stage('Build docker image') {
             steps {  
                 sh 'docker build -t anilgudivada/dash:$BUILD_NUMBER .'
