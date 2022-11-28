@@ -1,0 +1,16 @@
+- hosts: 172.31.20.232
+  become: true
+  tasks:
+    - name: Pull default Docker image
+      docker_image:
+        name: "anilgudivada/dash:26"
+        source: pull
+
+    - name: Create default containers
+      docker_container:
+        name: dash
+        image: "anilgudivada/dash:26"
+        published_ports:
+          - "80:80"
+        state: started
+        detach: yes
