@@ -1,0 +1,9 @@
+devops_user: devops2
+admin_group:
+- adm
+- sudo
+private_ip    : 172.16.0.1
+image_name: anilgudivada/dash:23
+admin_username: admin
+admin_password: adminsecret
+
