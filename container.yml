@@ -1,16 +1,20 @@
+---
 - hosts: 172.31.20.232
   become: true
   tasks:
+    - debug:
+        msg: "{{image_name}}"
     - name: Pull default Docker image
       docker_image:
-        name: "anilgudivada/dash:25"
+        name: "{{image_name}}"
         source: pull
 
     - name: Create default containers
       docker_container:
         name: dash
-        image: "anilgudivada/dash:25"
+        image: "{{image_name}}"
         published_ports:
           - "80:80"
         state: started
         detach: yes
+
