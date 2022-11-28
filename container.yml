@@ -3,13 +3,13 @@
   tasks:
     - name: Pull default Docker image
       docker_image:
-        name: "anilgudivada/dash:23"
+        name: "anilgudivada/dashboard:2"
         source: pull
 
     - name: Create default containers
       docker_container:
         name: dash
-        image: "anilgudivada/dash:23"
+        image: "anilgudivada/dashboard:2"
         published_ports:
           - "80:80"
         state: started
